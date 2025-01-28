@@ -4,7 +4,7 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  description = "WSCat";
+  description = "wscat";
 
   outputs = { self, nixpkgs, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
@@ -22,6 +22,7 @@
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
               nodejs_22
+              packages.wscat
             ];
           };
         };
